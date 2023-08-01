@@ -1,0 +1,57 @@
+comando para manipulação sql mariadb - mysql
+
+1- Acesso| #mysql -u usuario -p
+
+2- Criar bando de dados| #CREATE DATABASE nome_do_banco; 
+
+3- Listar bancos de dados| #SHOW DATABASES;
+
+4- Selecionar banco de dados para uso| #USE nome_do_banco;
+
+5- Criar uma tabela| #CREATE TABLE nome_da_tabela (
+			    coluna1 tipo_de_dado1,
+			    coluna2 tipo_de_dado2,
+   			    ...
+		      );
+
+6- Listar tabelas do banco| #SHOW TABLES;
+
+7- Excluir tabela| #DROP TABLE nome_da_tabela;
+-------------------------------------------------------- Avançados
+8- Adicionar nova coluna a tabela já existente:
+
+#ALTER TABLE nome_da_tabela
+#ADD nome_da_coluna tipo_de_dado [restrições];
+obs:.
+- nome_da_tabela: é o nome da tabela à qual você deseja adicionar a coluna.
+- nome_da_coluna: é o nome da coluna que você quer adicionar.
+- tipo_de_dado: é o tipo de dado que a nova coluna irá armazenar (por exemplo, VARCHAR(100), INT, FLOAT, etc.).
+- restrições (opcional): são restrições adicionais que você pode aplicar à coluna, como NOT NULL, DEFAULT '0', UNIQUE, etc.
+
+9- Excluir coluna de tabela já existente:
+
+#ALTER TABLE nome_da_tabela
+#DROP COLUMN nome_da_coluna;
+
+10- Criação de tabela com todos tipos de dados:
+
+CREATE TABLE exemplo_tipos_de_dados (
+    col_inteiro INT,
+    col_decimal DECIMAL(10,2),
+    col_varchar VARCHAR(50),
+    col_char CHAR(10),
+    col_texto TEXT,
+    col_date DATE,
+    col_datetime DATETIME,
+    col_booleano BOOLEAN
+);
+col_inteiro: Tipo de dado inteiro (INT) para armazenar valores numéricos inteiros.
+col_decimal: Tipo de dado decimal (DECIMAL) para armazenar valores numéricos com parte decimal. Neste caso, usamos (10,2) para definir que o campo terá 10 dígitos no total, com 2 casas decimais.
+col_varchar: Tipo de dado VARCHAR para armazenar strings de tamanho variável com no máximo 50 caracteres.
+col_char: Tipo de dado CHAR para armazenar strings de tamanho fixo com exatamente 10 caracteres.
+col_texto: Tipo de dado TEXT para armazenar textos longos (mais de 255 caracteres).
+col_date: Tipo de dado DATE para armazenar datas no formato 'AAAA-MM-DD'.
+col_datetime: Tipo de dado DATETIME para armazenar data e hora no formato 'AAAA-MM-DD HH:MI:SS'.
+col_booleano: Tipo de dado BOOLEAN para armazenar valores de verdadeiro (TRUE) ou falso (FALSE).
+
+

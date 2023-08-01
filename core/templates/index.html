@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %} 
+{% include "includes/nav.html" %} 
+
+<div class="row">
+<div class="col-sm-6">
+<div class="card">
+  <div class="card-header">
+    Bem vindo(a), {{ user.username }}
+  </div>
+  {% if user.is_authenticated %}
+  <div class="card-body">
+    <h5 class="card-title">Sistema de controle de informação documentada</h5>
+    <p class="card-text">O seu último login no Docfiles foi em {{last_login_time}}</p>
+    <a href="#" class="btn btn-primary">Informações do usuário</a>
+  </div>
+  {% endif %}
+</div>
+</div>
+<div class="col-sm-6">
+  <button type="button" class="btn btn-dark btn btn-block"><a href="{% url 'documentacao:dept_list' %}"class="text-light">Pesquisa de Documentos</a></button>
+  <button type="button" class="btn btn-dark btn btn-block">Impressão de Documentos</button>
+</div>
+</div>
+{% endblock %} 
+{% block js %} 
+
+{% endblock js %}
+</ul>
+
